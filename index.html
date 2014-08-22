@@ -52,6 +52,9 @@
 					</p>
 					<p>I will go over some strategies around building and deploying features. How it can help you, and how it can hurt you very very badly.
 					</p>
+					<aside class="notes">
+						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+					</aside>
 				</section>
 				<section>
 					<h1>Hello My name is FRANK</h1>
@@ -62,12 +65,12 @@
 					<p>Show Picture of the pizza box jammed into the firige with the caption. We are a no limits interactive agency. Do not tell me it cannot be done.</p>
 				</section>
 				<section>
-					<section>
+					<section data-transition="linear">
 						<h1>Billy Mays</h1>
 						<div><img src="images/mays.jpg"></div>
 						<p>Try to find a picture of Billy Mays using a computer</p>
 					</section>
-					<section>
+					<section data-transition="linear">
 						<h2>Problem</h2>
 						<ul>
 							<li>Configuration Stored in Database</li>
@@ -75,7 +78,7 @@
 							<li>Duplication of work</li>
 						</ul>
 					</section>
-					<section>
+					<section data-transition="linear">
 						<h2>Solutions that don't work</h2>
 						<div><img src="images/web_baby.jpg"></div>
 						<ul>
@@ -85,16 +88,16 @@
 							<li>Configuration module</li>
 						</ul>
 					</section>
-					<section>
+					<section data-transition="linear">
 						<h1>Solution that works (Features)</h1>
 					</section>
 				</section>
 				<section>
-					<section>
+					<section data-transition="linear">
 						<h1>What is Features</h1>
 						<p></p>
 					</section>
-					<section>
+					<section data-transition="linear">
 						<h2>What does features do</h2>
 						<p>Features provides two things.</p>
 						<ol>
@@ -103,7 +106,7 @@
 						</ol>
 						<p>Features tries to provide a way of implementing Drupal's configuration in code.</p>
 					</section>
-					<section>
+					<section data-transition="linear">
 						<h2>What doesn't features do</h2>
 						<ul>
 							<li>Content</li>
@@ -116,17 +119,17 @@
 					</section>
 				</section>
 				<section>
-					<section>
+					<section data-transition="linear">
 						<h1>Anatomy of a Feature</h1>
 						<p></p>
 					</section>
-					<section>
+					<section data-transition="linear">
 						<h2>dot info</h2>
 						<p>Tells the Features module what to export.</p>
 						<pre><code>
-name = UA Eller Base
+name = Example Base
 core = 7.x
-package = UA Eller
+package = Example
 dependencies[] = addressfield
 dependencies[] = caption_filter
 dependencies[] = date
@@ -160,10 +163,71 @@ project path = sites/all/modules/features
 					<section>
 						<h2>*.features.inc</h2>
 						<p>This is where features does its business.</p>
+						<pre><code><?php
+/**
+ * @file
+ * example.features.inc
+ */
+
+/**
+ * Implements hook_ctools_plugin_api().
+ */
+function example_base_ctools_plugin_api($module = NULL, $api = NULL) {
+  if ($module == "strongarm" && $api == "strongarm") {
+    return array("version" => "1");
+  }
+}
+
+/**
+ * Implements hook_node_info().
+ */
+function example_base_node_info() {
+  $items = array(
+    'page' => array(
+      'name' => t('Page'),
+      'base' => 'node_content',
+      'description' => t('Use <em>basic pages</em> for your static content, such as an \'About us\' page.'),
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
+  );
+  return $items;
+}
+?>
+						</code></pre>
 					</section>
 					<section>
 						<h2>*.features.*.inc</h2>
 						<p>Module specific stuff.</p>
+						<pre><code><?php
+/**
+ * @file
+ * example_base.features.user_role.inc
+ */
+
+/**
+ * Implements hook_user_default_roles().
+ */
+function example_base_user_default_roles() {
+  $roles = array();
+
+  // Exported role: administrator.
+  $roles['administrator'] = array(
+    'name' => 'administrator',
+    'weight' => 8,
+  );
+
+  // Exported role: editor.
+  $roles['editor'] = array(
+    'name' => 'editor',
+    'weight' => 7,
+  );
+
+  return $roles;
+}
+?>
+</code></pre>
 					</section>
 				</section>
 				<section>
@@ -210,144 +274,6 @@ project path = sites/all/modules/features
 					<p></p>
 				</section>
 
-				<section>
-					<h2>Heads Up</h2>
-					<p>
-						reveal.js is a framework for easily creating beautiful presentations using HTML. You'll need a browser with
-						support for CSS 3D transforms to see it in its full glory.
-					</p>
-
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
-				</section>
-
-				<!-- Example of nested vertical slides -->
-				<section>
-					<section>
-						<h2>Vertical Slides</h2>
-						<p>
-							Slides can be nested inside of other slides,
-							try pressing <a href="#" class="navigate-down">down</a>.
-						</p>
-						<a href="#" class="image navigate-down">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 1</h2>
-						<p>Press down or up to navigate.</p>
-					</section>
-					<section>
-						<h2>Basement Level 2</h2>
-						<p>Cornify</p>
-						<a class="test" href="http://cornify.com">
-							<img width="280" height="326" src="https://s3.amazonaws.com/hakim-static/reveal-js/cornify.gif" alt="Unicorn">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 3</h2>
-						<p>That's it, time to go back up.</p>
-						<a href="#/2" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
-						</a>
-					</section>
-				</section>
-
-				<section>
-					<h2>Slides</h2>
-					<p>
-						Not a coder? No problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slid.es" target="_blank">http://slid.es</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
-				</section>
-
-				<section>
-					<h2>Works in Mobile Safari</h2>
-					<p>
-						Try it out! You can swipe through the slides and pinch your way to the overview.
-					</p>
-				</section>
-
-				<section>
-					<h2>Marvelous Unordered List</h2>
-					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
-				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
-
-						For those of you who like that sort of thing. Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
-
-						```
-						<section data-markdown>
-						  ## Markdown support
-
-						  For those of you who like that sort of thing.
-						  Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
-				</section>
-
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=cube#/transitions">Cube</a> -
-						<a href="?transition=page#/transitions">Page</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a> -
-						<a href="?transition=linear#/transitions">Linear</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?#/transitions">Default</a>
-					</p>
-				</section>
-
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						Reveal.js comes with a few themes built in: <br>
-						<a href="?#/themes">Default</a> -
-						<a href="?theme=sky#/themes">Sky</a> -
-						<a href="?theme=beige#/themes">Beige</a> -
-						<a href="?theme=simple#/themes">Simple</a> -
-						<a href="?theme=serif#/themes">Serif</a> -
-						<a href="?theme=night#/themes">Night</a> <br>
-						<a href="?theme=moon#/themes">Moon</a> -
-						<a href="?theme=solarized#/themes">Solarized</a>
-					</p>
-					<p>
-						<small>
-							* Theme demos are loaded after the presentation which leads to flicker. In production you should load your theme in the <code>&lt;head&gt;</code> using a <code>&lt;link&gt;</code>.
-						</small>
-					</p>
-				</section>
 
 				<section>
 					<h2>Global State</h2>
