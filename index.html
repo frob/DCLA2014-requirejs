@@ -49,9 +49,9 @@
 						<small>Created by <a href="http://www.frankrobertanderson.com">Frank Anderson</a> / <a href="http://twitter.com/frobdfas">@frobdfas</a></small>
 					</p>
 					<p>One of the most useful things to come into the forefront of Drupal development recently is the features module. This module is so useful that, in spite of being a difficult-to-use-beast-that-can-easily-completely-screw-up your site, it is a key part of every project we work on.
-</p><p>
-I will go over some strategies around building and deploying features. How it can help you, and how it can hurt you very very badly.
-</p>
+					</p>
+					<p>I will go over some strategies around building and deploying features. How it can help you, and how it can hurt you very very badly.
+					</p>
 				</section>
 				<section>
 					<h1>Hello My name is FRANK</h1>
@@ -64,6 +64,7 @@ I will go over some strategies around building and deploying features. How it ca
 				<section>
 					<section>
 						<h1>Billy Mays</h1>
+						<div><img src="images/mays.jpg"></div>
 						<p>Try to find a picture of Billy Mays using a computer</p>
 					</section>
 					<section>
@@ -76,6 +77,7 @@ I will go over some strategies around building and deploying features. How it ca
 					</section>
 					<section>
 						<h2>Solutions that don't work</h2>
+						<div><img src="images/web_baby.jpg"></div>
 						<ul>
 							<li>Backup and Migrate</li>
 							<li>Doing the work twice</li>
@@ -85,12 +87,7 @@ I will go over some strategies around building and deploying features. How it ca
 					</section>
 					<section>
 						<h1>Solution that works (Features)</h1>
-						<p></p>
 					</section>
-				</section>
-				<section>
-					<h1>What is features</h1>
-					<p></p>
 				</section>
 				<section>
 					<section>
@@ -98,12 +95,24 @@ I will go over some strategies around building and deploying features. How it ca
 						<p></p>
 					</section>
 					<section>
-						<h1>What does features do</h1>
-						<p></p>
+						<h2>What does features do</h2>
+						<p>Features provides two things.</p>
+						<ol>
+							<li>Exportables for key peices of Drupal core configuration --mostly content type.</li>
+							<li>An API to allow other modules to provide a central interface for exportables.</li>
+						</ol>
+						<p>Features tries to provide a way of implementing Drupal's configuration in code.</p>
 					</section>
 					<section>
-						<h1>What doesn't features do</h1>
-						<p></p>
+						<h2>What doesn't features do</h2>
+						<ul>
+							<li>Content</li>
+							<li>Variables (not out of the box)</li>
+							<li>Taxonomy</li>
+							<li>Blocks</li>
+							<li>Users</li>
+							<li>Export the settings for the key feature of the most important contributed module in your largest project.</li>
+						</ul>
 					</section>
 				</section>
 				<section>
@@ -111,6 +120,53 @@ I will go over some strategies around building and deploying features. How it ca
 						<h1>Anatomy of a Feature</h1>
 						<p></p>
 					</section>
+					<section>
+						<h2>dot info</h2>
+						<p>Tells the Features module what to export.</p>
+						<pre><code>
+name = UA Eller Base
+core = 7.x
+package = UA Eller
+dependencies[] = addressfield
+dependencies[] = caption_filter
+dependencies[] = date
+[...]
+dependencies[] = wysiwyg
+dependencies[] = wysiwyg_template
+features[ctools][] = strongarm:strongarm:1
+features[features_api][] = api:2
+features[field_base][] = body
+features[field_base][] = comment_body
+[...]
+features[field_base][] = title_field
+features[field_instance][] = node-page-body
+[...]
+features[field_instance][] = node-page-title_field
+features[filter][] = filtered_html
+features[filter][] = full_html
+features[node][] = page
+features[taxonomy][] = article_categories
+features[taxonomy][] = article_tags
+features[taxonomy][] = article_type
+features[user_role][] = administrator
+features[user_role][] = editor
+features[variable][] = comment_anonymous_page
+[...]
+features[variable][] = node_submitted_page
+features[wysiwyg][] = full_html
+project path = sites/all/modules/features
+						</code></pre>
+					</section>
+					<section>
+						<h2>*.features.inc</h2>
+						<p>This is where features does its business.</p>
+					</section>
+					<section>
+						<h2>*.features.*.inc</h2>
+						<p>Module specific stuff.</p>
+					</section>
+				</section>
+				<section>
 					<section>
 						<h1></h1>
 						<p></p>
@@ -130,11 +186,20 @@ I will go over some strategies around building and deploying features. How it ca
 				</section>
 				<section>
 					<h1>How features will abandon you</h1>
-					<p></p>
+					<div><img src="images/gez3mnu.gif"></div>
+				</section>
+				<section>
+					<h2>How features will abandon you</h2>
+						<ul>
+							<li>Too good to be true</li>
+							<li>Too dumb to be helpfull</li>
+							<li>doesn't keep track of things</li>
+							<li>Not everything supports Features</li>
+						</ul>
 				</section>
 				<section>
 					<h1>Features in Drupal 8</h1>
-					<p></p>
+					<p>Drupal 8's Config Management system doesn't replace features.</p>
 				</section>
 				<section>
 					<h1>questions?</h1>
