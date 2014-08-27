@@ -61,17 +61,12 @@
 					<p>Put stuff here about who I am and why they should listen to me.</p>
 				</section>
 				<section>
-					<h1>Kwall Slide</h1>
-					<p>Show Picture of the pizza box jammed into the firige with the caption. We are a no limits interactive agency. Do not tell me it cannot be done.</p>
+					<h2>Kwall Slide</h2>
+					<p>We are a no limits interactive agency.<img src="images/IMG_20140325_122828.jpg"><p> Do not tell me it cannot be done.</p>
 				</section>
 				<section>
 					<section data-transition="linear">
-						<h1>Billy Mays</h1>
-						<div><img src="images/mays.jpg"></div>
-						<p>Try to find a picture of Billy Mays using a computer</p>
-					</section>
-					<section data-transition="linear">
-						<h2>Problem</h2>
+						<h1>Problem with Drupal Development</h1>
 						<ul>
 							<li class="fragment grow">Configuration Stored in Database</li>
 							<li class="fragment grow">Multiple Devs working in Multiple Environments</li>
@@ -234,36 +229,104 @@ function example_base_user_default_roles() {
 				</section>
 				<section>
 					<section>
-						<h1></h1>
-						<p></p>
+						<h1>Features Orginization</h1>
+						<dl>
+							<dt>Custom Theme</dt>
+							<dd>sites/*/themes/custom</dd>
+							<dt>Custom Modules</dt>
+							<dd>sites/*/modules/custom</dd>
+							<dt>Features</dt>
+							<dd>sites/*/modules/custom/features</dd>
+						</dl>
+					</section>
+					<section>
+						<h1>Features Naming Conventions</h1>
+						<p>Name it for what it does, but be mindfull of name collisions.</p>
 					</section>
 				</section>
 				<section>
 					<section data-transition="linear">
 						<h1>How to use Features - Basic</h1>
-						<p></p>
+						<p>Using the UI</p>
+					</section>
+					<section data-transition="linear">
+						<h1>Features UI Page</h1>
+						<p>Using the UI</p>
 					</section>
 				</section>
-				<section data-transition="linear">
-					<h1>How to use Features - Advanced</h1>
-					<p></p>
-				</section>
-				<section data-transition="linear">
-					<h1>How to do Deployment with features</h1>
-					<p></p>
-				</section>
-				<section data-transition="linear">
-					<h1>How features will abandon you</h1>
-					<div><img src="images/gez3mnu.gif"></div>
+				<section>
+					<section data-transition="linear">
+						<h1>How to use Features - Advanced</h1>
+						<p>Drush commands you need to know</p>
+						<dl>
+							<dt>Feature Revert -- fr</dt>
+							<dd>Reverts a feature that has been overriden to what is in code.</dd>
+							<dt>Feature Update -- fu</dt>
+							<dd>Updateds a feature's code to what is currently in the database.</dd>
+							<dt>fra &amp; fua</dt>
+							<dd>The same as above but with all currently enabled features.</dd>
+						</dl>
+					</section>
+					<section data-transition="linear">
+						<h2>How how Features builds a feature.</h1>
+						<ol>
+							<li>Looks at the .info file</li>
+							<li>...</li>
+							<li>Profit</li>
+						</ol>
+					</section>
+					<section data-transition="linear">
+						<h2>And what does this mean?</h1>
+						<p>This means that you can add components to the info file and then run drush feature-update and it will add that component.</p>
+					</section>
+					<section data-transition="linear">
+						<h2>A Feature is a module</h1>
+						<p>You can put custom code into the *.module file.</p>
+					</section>
 				</section>
 				<section>
-					<h2>How features will abandon you</h2>
-						<ul>
-							<li>Too good to be true</li>
-							<li>Too dumb to be helpfull</li>
-							<li>doesn't keep track of things</li>
-							<li>Not everything supports Features</li>
-						</ul>
+					<section data-transition="linear">
+						<h1>How to do Deployment with features</h1>
+						<p></p>
+					</section>
+					<section data-transition="linear">
+						<h1>Deployments Should be..</h1>
+						<p>Repeatable, automated, testable</p>
+					</section>
+					<section data-transition="linear">
+						<h2>Utilize Update Hooks</h2>
+						<pre><code>/**
+ * Enable some custom code
+ */
+function custom_feature_update_7001() {
+  features_revert(array('feature' => array('component')));
+}</code></pre>
+					</section>
+					<section data-transition="linear">
+						<h2>Utilize Soft Dependancies</h2>
+						<pre><code>/**
+ * Enable some custom code
+ */
+function custom_deploy_update_7022() {
+
+  module_enable(array('plupload'));
+}</code></pre>
+					</section>
+				</section>
+				<section>
+					<section data-transition="linear">
+						<h1>How features will abandon you</h1>
+						<div><img src="images/gez3mnu.gif"></div>
+					</section>
+					<section>
+						<h2>How features will abandon you</h2>
+							<ul>
+								<li>Too good to be true</li>
+								<li>Too dumb to be helpfull</li>
+								<li>doesn't keep track of things</li>
+								<li>Not everything supports Features</li>
+							</ul>
+					</section>
 				</section>
 				<section>
 					<h1>Features in Drupal 8</h1>
@@ -278,158 +341,6 @@ function example_base_user_default_roles() {
 					<p></p>
 				</section>
 
-
-				<section>
-					<h2>Global State</h2>
-					<p>
-						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-						will be added as a class to the document element when the slide is open. This lets you
-						apply broader style changes, like switching the background.
-					</p>
-				</section>
-
-				<section data-state="customevent">
-					<h2>Custom Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
-Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
-				</section>
-
-				<section>
-					<section data-background="#007777">
-						<h2>Slide Backgrounds</h2>
-						<p>
-							Set <code>data-background="#007777"</code> on a slide to change the full page background to the given color. All CSS color formats are supported.
-						</p>
-						<a href="#" class="image navigate-down">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png">
-						<h2>Image Backgrounds</h2>
-						<pre><code>&lt;section data-background="image.png"&gt;</code></pre>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" data-background-repeat="repeat" data-background-size="100px">
-						<h2>Repeated Image Backgrounds</h2>
-						<pre><code style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-					</section>
-				</section>
-
-				<section data-transition="linear" data-background="#4d7e65" data-background-transition="slide">
-					<h2>Background Transitions</h2>
-					<p>
-						Pass reveal.js the <code>backgroundTransition: 'slide'</code> config argument to make backgrounds slide rather than fade.
-					</p>
-				</section>
-
-				<section data-transition="linear" data-background="#8c4738" data-background-transition="slide">
-					<h2>Background Transition Override</h2>
-					<p>
-						You can override background transitions per slide by using <code>data-background-transition="slide"</code>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Pretty Code</h2>
-					<pre><code data-trim contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
-
-    var nodes = document.querySelectorAll( selector );
-
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
-
-      if( !node.className ) {
-        node.className += ' roll';
-      }
-    }
-  }
-}
-					</code></pre>
-					<p>Courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
-				</section>
-
-				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,
-						<a href="#/2/3">like this</a>.
-					</p>
-				</section>
-
-				<section>
-					<section id="fragments">
-						<h2>Fragmented Views</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<ol>
-							<li class="fragment"><code>any type</code></li>
-							<li class="fragment"><em>of view</em></li>
-							<li class="fragment"><strong>fragments</strong></li>
-						</ol>
-
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
-					</section>
-					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's a few styles of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment roll-in">roll-in</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p class="fragment highlight-red">highlight-red</p>
-						<p class="fragment highlight-green">highlight-green</p>
-						<p class="fragment highlight-blue">highlight-blue</p>
-						<p class="fragment current-visible">current-visible</p>
-						<p class="fragment highlight-current-blue">highlight-current-blue</p>
-					</section>
-				</section>
-
-				<section>
-					<h2>Spectacular image!</h2>
-					<a class="image" href="http://lab.hakim.se/meny/" target="_blank">
-						<img width="320" height="299" src="http://s3.amazonaws.com/hakim-static/portfolio/images/meny.png" alt="Meny">
-					</a>
-				</section>
-
-				<section>
-					<h2>Export to PDF</h2>
-					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, below is an example that's been uploaded to SlideShare.</p>
-					<iframe id="slideshare" src="http://www.slideshare.net/slideshow/embed_code/13872948" width="455" height="356" style="margin:0;overflow:hidden;border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen> </iframe>
-					<script>
-						document.getElementById('slideshare').attributeName = 'allowfullscreen';
-					</script>
-				</section>
-
-				<section>
-					<h2>Take a Moment</h2>
-					<p>
-						Press b or period on your keyboard to enter the 'paused' mode. This mode is helpful when you want to take distracting slides off the screen
-						during a presentation.
-					</p>
-				</section>
-
-				<section>
-					<h2>Stellar Links</h2>
-					<ul>
-						<li><a href="http://slid.es">Try the online editor</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js">Source code on GitHub</a></li>
-						<li><a href="http://twitter.com/hakimel">Follow me on Twitter</a></li>
-					</ul>
-				</section>
-
-				<section>
-					<h1>THE END</h1>
-					<h3>BY Hakim El Hattab / hakim.se</h3>
-				</section>
 
 			</div>
 
