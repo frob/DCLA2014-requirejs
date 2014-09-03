@@ -1,129 +1,139 @@
 <!doctype html>
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8">
+  <head>
+    <meta charset="utf-8">
 
-		<title>Drupal Camp LA 2014 Features Presendation by Frank Anderson</title>
+    <title>Drupal Camp LA 2014 Features Presendation by Frank Anderson</title>
 
-		<meta name="description" content="This was a presentation given by Frank Anderson about how and why to use the features module in Drupal Development">
-		<meta name="author" content="Frank Anderson">
+    <meta name="description" content="This was a presentation given by Frank Anderson about how and why to use the features module in Drupal Development">
+    <meta name="author" content="Frank Anderson">
 
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="css/reveal.min.css">
-		<link rel="stylesheet" href="css/theme/night.css" id="theme">
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/theme/night.css" id="theme">
 
-		<!-- For syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
-		<script>
-			if( window.location.search.match( /print-pdf/gi ) ) {
-				var link = document.createElement( 'link' );
-				link.rel = 'stylesheet';
-				link.type = 'text/css';
-				link.href = 'css/print/pdf.css';
-				document.getElementsByTagName( 'head' )[0].appendChild( link );
-			}
-		</script>
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+      if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+      }
+    </script>
 
-		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
-	</head>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
 
-	<body>
+  <body>
 
-		<div class="reveal">
+    <div class="reveal">
 
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
-				<section>
-					<h1>Features</h1>
-					<h3>Making Features work for you.</h3>
-					<p>
-						<small>Created by <a href="http://www.frankrobertanderson.com">Frank Anderson</a> / <a href="http://twitter.com/frobdfas">@frobdfas</a></small>
-					</p>
-					<p>One of the most useful things to come into the forefront of Drupal development recently is the features module. This module is so useful that, in spite of being a difficult-to-use-beast-that-can-easily-completely-screw-up your site, it is a key part of every project we work on.
-					</p>
-					<p>I will go over some strategies around building and deploying features. How it can help you, and how it can hurt you very very badly.
-					</p>
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
-				</section>
-				<section>
-					<h1>Hello My name is FRANK</h1>
-					<p>Put stuff here about who I am and why they should listen to me.</p>
-				</section>
-				<section>
-					<h2>Kwall Slide</h2>
-					<p>We are a no limits interactive agency.<img src="images/IMG_20140325_122828.jpg"><p> Do not tell me it cannot be done.</p>
-				</section>
-				<section>
-					<section data-transition="linear">
-						<h1>Problem with Drupal Development</h1>
-						<ul>
-							<li class="fragment grow">Configuration Stored in Database</li>
-							<li class="fragment grow">Multiple Devs working in Multiple Environments</li>
-							<li class="fragment grow">Duplication of work</li>
-						</ul>
-					</section>
-					<section data-transition="linear">
-						<h2>Solutions that don't work</h2>
-						<div><img src="images/web_baby.jpg"></div>
-						<ul>
-							<li class="fragment roll-in">Backup and Migrate</li>
-							<li class="fragment roll-in">Doing the work twice</li>
-							<li class="fragment roll-in">Custom Code</li>
-							<li class="fragment roll-in">Configuration module</li>
-						</ul>
-					</section>
-					<section data-transition="linear">
-						<h1>Solution that works (Features)</h1>
-					</section>
-				</section>
-				<section>
-					<section data-transition="linear">
-						<h1>What is Features</h1>
-						<p></p>
-					</section>
-					<section data-transition="linear">
-						<h2>What does features do</h2>
-						<div class="fragment current-visible">
-							<p class="">Features provides two things.</p>
-							<ol class="">
-								<li>Exportables for key peices of Drupal core configuration --mostly content type.</li>
-								<li>An API to allow other modules to provide a central interface for exportables.</li>
-							</ol>
-						</div>
-						<p class="fragment current-visible">Features attempts to provide a way of implementing Drupal's configuration in code.</p>
-					</section>
-					<section data-transition="linear">
-						<h2>What doesn't features do</h2>
-						<ul>
-							<li class="fragment roll-in">Content</li>
-							<li class="fragment roll-in">Variables (not out of the box)</li>
-							<li class="fragment roll-in">Taxonomy</li>
-							<li class="fragment roll-in">Blocks</li>
-							<li class="fragment roll-in">Users</li>
-							<li class="fragment roll-in">Export the settings for the key feature of the most important contributed module in your largest project.</li>
-						</ul>
-					</section>
-				</section>
-				<section>
-					<section data-transition="linear">
-						<h1>Anatomy of a Feature</h1>
-						<p></p>
-					</section>
-					<section data-transition="linear">
-						<h2>dot info</h2>
-						<p>Tells the Features module what to export.</p>
-						<pre><code>
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section>
+          <h1>Features</h1>
+          <h3>Making Features work for you.</h3>
+          <p>
+            <small>Created by <a href="http://www.frankrobertanderson.com">Frank Anderson</a> / <a href="http://twitter.com/frobdfas">@frobdfas</a></small>
+          </p>
+          <p>One of the most useful things to come into the forefront of Drupal development recently is the features module. This module is so useful that, in spite of being a difficult-to-use-beast-that-can-easily-completely-screw-up your site, it is a key part of every project we work on.
+          </p>
+          <p>I will go over some strategies around building and deploying features. How it can help you, and how it can hurt you very very badly.
+          </p>
+          <aside class="notes">
+            Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+          </aside>
+        </section>
+        <section>
+          <h1>Hello My name is FRANK</h1>
+          <ul>
+            <li>Frank Anderson</li>
+            <li><strong>frob</strong> on drupal.org and IRC</li>
+            <li>Maintainer of:
+              <ul>
+                <li>Drupal for Firebug</li>
+                <li>Google Analytics Event Tracker</li>
+                <li>Google Analytics Lite</li>
+                <li>Various other Kwall D.o Projects</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>Kwall Slide</h2>
+          <p>We are a no limits interactive agency.<img src="images/IMG_20140325_122828.jpg"><p> Do not tell me it cannot be done.</p>
+        </section>
+        <section>
+          <section data-transition="linear">
+            <h1>Problem with Drupal Development</h1>
+            <ul>
+              <li class="fragment grow">Configuration Stored in Database</li>
+              <li class="fragment grow">Multiple Devs working in Multiple Environments</li>
+              <li class="fragment grow">Duplication of work</li>
+            </ul>
+          </section>
+          <section data-transition="linear">
+            <h2>Solutions that don't work</h2>
+            <div><img src="images/web_baby.jpg"></div>
+            <ul>
+              <li class="fragment roll-in">Backup and Migrate</li>
+              <li class="fragment roll-in">Doing the work twice</li>
+              <li class="fragment roll-in">Custom Code</li>
+              <li class="fragment roll-in">Configuration module</li>
+            </ul>
+          </section>
+          <section data-transition="linear">
+            <h1>Solution that works (Features)</h1>
+          </section>
+        </section>
+        <section>
+          <section data-transition="linear">
+            <h1>What is Features</h1>
+          </section>
+          <section data-transition="linear">
+            <h2>What does features do</h2>
+            <div class="fragment current-visible">
+              <p class="">Features provides two things.</p>
+              <ol class="">
+                <li>Exportables for key pieces of Drupal core configuration --mostly content type.</li>
+                <li>An API to allow other modules to provide a central interface for exportables.</li>
+              </ol>
+            </div>
+            <p class="fragment current-visible">Features attempts to provide a way of implementing Drupal's configuration in code.</p>
+          </section>
+          <section data-transition="linear">
+            <h2>What doesn't features do</h2>
+            <ul>
+              <li class="fragment roll-in">Content</li>
+              <li class="fragment roll-in">Variables (not out of the box)</li>
+              <li class="fragment roll-in">Taxonomy</li>
+              <li class="fragment roll-in">Blocks</li>
+              <li class="fragment roll-in">Users</li>
+              <li class="fragment roll-in">Export the settings for the key feature of the most important contributed module in your largest project.</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section data-transition="linear">
+            <h1>Anatomy of a Feature</h1>
+            <p></p>
+          </section>
+          <section data-transition="linear">
+            <h2>dot info</h2>
+            <p>Tells the Features module what to export.</p>
+            <pre><code>
 name = Example Base
 core = 7.x
 package = Example
@@ -155,12 +165,12 @@ features[variable][] = comment_anonymous_page
 features[variable][] = node_submitted_page
 features[wysiwyg][] = full_html
 project path = sites/all/modules/features
-						</code></pre>
-					</section>
-					<section>
-						<h2>*.features.inc</h2>
-						<p>This is where features does its business.</p>
-						<pre><code><?php
+            </code></pre>
+          </section>
+          <section>
+            <h2>*.features.inc</h2>
+            <p>This is where features does its business.</p>
+            <pre><code><?php
 /**
  * @file
  * example.features.inc
@@ -192,12 +202,12 @@ function example_base_node_info() {
   return $items;
 }
 ?>
-						</code></pre>
-					</section>
-					<section>
-						<h2>*.features.*.inc</h2>
-						<p>Module specific stuff.</p>
-						<pre><code><?php
+            </code></pre>
+          </section>
+          <section>
+            <h2>*.features.*.inc</h2>
+            <p>Module specific stuff.</p>
+            <pre><code><?php
 /**
  * @file
  * example_base.features.user_role.inc
@@ -225,159 +235,200 @@ function example_base_user_default_roles() {
 }
 ?>
 </code></pre>
-					</section>
-				</section>
-				<section>
-					<section>
-						<h1>Features Orginization</h1>
-						<dl>
-							<dt>Custom Theme</dt>
-							<dd>sites/*/themes/custom</dd>
-							<dt>Custom Modules</dt>
-							<dd>sites/*/modules/custom</dd>
-							<dt>Features</dt>
-							<dd>sites/*/modules/custom/features</dd>
-						</dl>
-					</section>
-					<section>
-						<h1>Features Naming Conventions</h1>
-						<p>Name it for what it does, but be mindfull of name collisions.</p>
-					</section>
-				</section>
-				<section>
-					<section data-transition="linear">
-						<h1>How to use Features - Basic</h1>
-						<p>Using the UI</p>
-					</section>
-					<section data-transition="linear">
-						<h1>Features UI Page</h1>
-						<p>Using the UI</p>
-					</section>
-				</section>
-				<section>
-					<section data-transition="linear">
-						<h1>How to use Features - Advanced</h1>
-						<p>Drush commands you need to know</p>
-						<dl>
-							<dt>Feature Revert -- fr</dt>
-							<dd>Reverts a feature that has been overriden to what is in code.</dd>
-							<dt>Feature Update -- fu</dt>
-							<dd>Updateds a feature's code to what is currently in the database.</dd>
-							<dt>fra &amp; fua</dt>
-							<dd>The same as above but with all currently enabled features.</dd>
-						</dl>
-					</section>
-					<section data-transition="linear">
-						<h2>How how Features builds a feature.</h1>
-						<ol>
-							<li>Looks at the .info file</li>
-							<li>...</li>
-							<li>Profit</li>
-						</ol>
-					</section>
-					<section data-transition="linear">
-						<h2>And what does this mean?</h1>
-						<p>This means that you can add components to the info file and then run drush feature-update and it will add that component.</p>
-					</section>
-					<section data-transition="linear">
-						<h2>A Feature is a module</h1>
-						<p>You can put custom code into the *.module file.</p>
-					</section>
-				</section>
-				<section>
-					<section data-transition="linear">
-						<h1>How to do Deployment with features</h1>
-						<p></p>
-					</section>
-					<section data-transition="linear">
-						<h1>Deployments Should be..</h1>
-						<p>Repeatable, automated, testable</p>
-					</section>
-					<section data-transition="linear">
-						<h2>Utilize Update Hooks</h2>
-						<pre><code>/**
+          </section>
+        </section>
+        <section>
+          <section>
+            <h1>Features Organization</h1>
+            <dl>
+              <dt>Custom Theme</dt>
+              <dd>sites/*/themes/custom</dd>
+              <dt>Custom Modules</dt>
+              <dd>sites/*/modules/custom</dd>
+              <dt>Features</dt>
+              <dd>sites/*/modules/custom/features</dd>
+            </dl>
+          </section>
+          <section>
+            <h2>Features Naming Conventions</h2>
+            <p>Name it for what it does, but be mindfull of name collisions.</p>
+          </section>
+          <section>
+            <h2>Organize the Features</h2>
+            <p>Features is dumb, think for Features. Do not trust that it knows.</p>
+            <ul>
+              <li>Enable your Features</li>
+              <li>Test your Features</li>
+              <li>Check your Features Dependancies, Field Groups, Contrib Entity Settings</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section data-transition="linear">
+            <h1>How to use Features - Basic</h1>
+            <p>Using the UI</p>
+          </section>
+          <section data-transition="linear">
+            <h2>Features Process</h2>
+            <ol>
+              <li>Backup</li>
+              <li>Commit</li>
+              <li>Export</li>
+              <li>Commit</li>
+              <li>Enable</li>
+              <li>Test</li>
+              <li>Repeat</li>
+            </ol>
+            <aside class="notes">
+              Backup
+              Export
+              Enable
+              Test
+            </aside>
+          </section>
+          <section data-transition="linear">
+            <h1>Features UI Page</h1>
+            <p>Using the UI</p>
+            <aside class="notes">
+              Backup
+              Export
+                Download
+                Generate in place
+              Enable
+            </aside>
+          </section>
+        </section>
+        <section>
+          <section data-transition="linear">
+            <h1>How to use Features - Advanced</h1>
+            <p>Drush commands you need to know</p>
+            <dl>
+              <dt>Feature Revert -- fr</dt>
+              <dd>Reverts a feature that has been overridden to what is in code.</dd>
+              <dt>Feature Update -- fu</dt>
+              <dd>Updates a feature's code to what is currently in the database.</dd>
+              <dt>fra &amp; fua</dt>
+              <dd>The same as above but with all currently enabled features.</dd>
+            </dl>
+          </section>
+          <section data-transition="linear">
+            <h2>How how Features builds a feature.</h1>
+            <ol>
+              <li>Looks at the .info file</li>
+              <li>...</li>
+              <li>Profit</li>
+            </ol>
+          </section>
+          <section data-transition="linear">
+            <h2>And what does this mean?</h1>
+            <p>This means that you can add components to the info file and then run drush feature-update and it will add that component.</p>
+          </section>
+          <section data-transition="linear">
+            <h2>What if something changes?</h1>
+            <p>A feature will have an overrideen status if something changed.</p>
+            <p>If the diff module is enabled then you will be able to diff the features before exporting them. This way you can see what changed.</p>
+          </section>
+          <section data-transition="linear">
+            <h2>A Feature is a module</h1>
+            <p>You can put custom code into the *.module file.</p>
+          </section>
+        </section>
+        <section>
+          <section data-transition="linear">
+            <h1>How to do Deployment with features</h1>
+          </section>
+          <section data-transition="linear">
+            <h1>Deployments Should be..</h1>
+            <p>Repeatable, automated, testable</p>
+          </section>
+          <section data-transition="linear">
+            <h2>Utilize Update Hooks</h2>
+            <pre><code>/**
  * Enable some custom code
  */
 function custom_feature_update_7001() {
   features_revert(array('feature' => array('component')));
 }</code></pre>
-					</section>
-					<section data-transition="linear">
-						<h2>Utilize Soft Dependancies</h2>
-						<pre><code>/**
+          </section>
+          <section data-transition="linear">
+            <h2>Utilize Soft Dependancies</h2>
+            <pre><code>/**
  * Enable some custom code
  */
 function custom_deploy_update_7022() {
 
   module_enable(array('plupload'));
 }</code></pre>
-					</section>
-				</section>
-				<section>
-					<section data-transition="linear">
-						<h1>How features will abandon you</h1>
-						<div><img src="images/gez3mnu.gif"></div>
-					</section>
-					<section>
-						<h2>How features will abandon you</h2>
-							<ul>
-								<li>Too good to be true</li>
-								<li>Too dumb to be helpfull</li>
-								<li>doesn't keep track of things</li>
-								<li>Not everything supports Features</li>
-							</ul>
-					</section>
-				</section>
-				<section>
-					<h1>Features in Drupal 8</h1>
-					<p>Drupal 8's Config Management system doesn't replace features.</p>
-				</section>
-				<section>
-					<h1>questions?</h1>
-					<p></p>
-				</section>
-				<section>
-					<h1>Other Kwall Sessions</h1>
-					<p></p>
-				</section>
+          </section>
+        </section>
+        <section>
+          <section data-transition="linear">
+            <h1>How features will abandon you</h1>
+            <div><img src="images/gez3mnu.gif"></div>
+          </section>
+          <section>
+            <h2>How features will abandon you</h2>
+              <ul>
+                <li>Too good to be true</li>
+                <li>Too dumb to be helpfull</li>
+                <li>doesn't keep track of things</li>
+                <li>Not everything supports Features</li>
+                <li>What? Features is buggy?</li>
+              </ul>
+          <aside class="notes">
+            Talk about incompatibilities BAM and Features
+            Code overridding db and db overridding code
 
+          </aside>
+          </section>
+        </section>
+        <section>
+          <h1>Features in Drupal 8</h1>
+          <p>Drupal 8's Config Management system doesn't replace features.</p>
+        </section>
+        <section>
+          <h1>questions?</h1>
+          <p></p>
+        </section>
+        <section>
+          <h1>Other Kwall Sessions</h1>
+          <p></p>
+        </section>
+      </div>
+    </div>
 
-			</div>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.min.js"></script>
 
-		</div>
+    <script>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.min.js"></script>
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
 
-		<script>
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
 
-			// Full list of configuration options available here:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
+        // Parallax scrolling
+        // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+        // parallaxBackgroundSize: '2100px 900px',
 
-				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
 
-				// Parallax scrolling
-				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
-				// parallaxBackgroundSize: '2100px 900px',
+    </script>
 
-				// Optional libraries used to extend on reveal.js
-				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-				]
-			});
-
-		</script>
-
-	</body>
+  </body>
 </html>
