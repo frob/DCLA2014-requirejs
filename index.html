@@ -34,33 +34,39 @@
     <!--[if lt IE 9]>
     <script src="lib/js/html5shiv.js"></script>
     <![endif]-->
+
+    <style>
+
+.reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6  {
+  color: black;
+}
+    </style>
   </head>
 
   <body>
 
-    <div class="reveal">
+    <div class="reveal" style="background-image: url(images/bckbrand.jpg); background-repeat:no-repeat; background-position: center; color: black;">
 
       <!-- Any section element inside of this container is displayed as a slide -->
       <div class="slides">
-        <section>
-          <h1>Features</h1>
-          <h3>Making Features work for you.</h3>
+        <section data-transition="linear">
+          <h1>RequireJS</h1>
+          <h3>Asynchronous module definition</h3>
           <p>
             <small>Created by <a href="http://www.frankrobertanderson.com">Frank Anderson</a> / <a href="http://twitter.com/frobdfas">@frobdfas</a></small>
           </p>
-          <p>One of the most useful things to come into the forefront of Drupal development recently is the features module. This module is so useful that, in spite of being a difficult-to-use-beast-that-can-easily-completely-screw-up your site, it is a key part of every project we work on.
-          </p>
-          <p>I will go over some strategies around building and deploying features. How it can help you, and how it can hurt you very very badly.
+          <p>
           </p>
           <aside class="notes">
             Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
           </aside>
         </section>
-        <section>
+        <section data-transition="linear">
           <h1>Hello My name is FRANK</h1>
           <ul>
             <li>Frank Anderson</li>
             <li><strong>frob</strong> on drupal.org and IRC</li>
+            <li>Developer at <a href="//kwallcompany.com">KWall</a>.</li>
             <li>Maintainer of:
               <ul>
                 <li>Drupal for Firebug</li>
@@ -72,51 +78,194 @@
           </ul>
         </section>
         <section>
-          <h2>Kwall Slide</h2>
-          <p>We are a no limits interactive agency.<img src="images/IMG_20140325_122828.jpg"><p> Do not tell me it cannot be done.</p>
+          <h2 style="margin-top:-100px;">At Kwall</h2>
+          <p>We are a no limits interactive agency.</p><img src="images/IMG_20140325_122828.jpg">
         </section>
-        <section>
           <section data-transition="linear">
-            <h1>Problem with Drupal Development</h1>
+            <section>
+              <h2>What is AMD</h2>
+              <p class="fragment roll-in">A way to let your Javascript manage its own dependanceis</p>
+              <ul class="fragment roll-in">
+                <li>Define the modules</li>
+                <li>Define the dependancies</li>
+                <li>Encapsulation of code</li>
+              </ul>
+              <aside class="notes">First Found AMD while re-writing Drupal For Firebug</aside>
+            </section>
+          </section>
+          <section data-transition="linear"><h2>Why do this</h2>
             <ul>
-              <li class="fragment grow">Configuration Stored in Database</li>
-              <li class="fragment grow">Multiple Devs working in Multiple Environments</li>
-              <li class="fragment grow">Duplication of work</li>
+              <li class="fragment roll-in">No inline dependancy declaration in the language</li>
+              <li class="fragment roll-in">Load it all</li>
+              <li class="fragment roll-in">Not suitable for WebApps</li>
+              <li class="fragment roll-in">Doing <code>document.write("&lt;scr"+"ipt src='scipt.js' /&gt;");</code> really sucks for including code</li>
             </ul>
           </section>
-          <section><section data-transition="linear"><h2>What is AMD</h2></section>
-<section data-transition="linear"><h2>  I first found AMD in js when doing Drupal for Firebug</h2></section></section>
-<section data-transition="linear"><h2>Why do this</h2></section>
-<section><section data-transition="linear"><h2>Issues with JS</h2></section>
-<section data-transition="linear"><h2>  No inline dependancy declariation in the language</h2></section>
-<section data-transition="linear"><h2>  Load it all</h2></section>
-<section data-transition="linear"><h2>  Not suitable for WebApps</h2></section></section>
-<section data-transition="linear"><h2>What is AMD</h2></section>
-<section data-transition="linear"><h2>How does AMD solve the issue of large web apps writen in JS</h2></section>
-<section data-transition="linear"><h2>What is RequireJS</h2></section>
-<section data-transition="linear"><h2>How does RequireJS whork</h2></section>
-<section data-transition="linear"><h2>Structure of a RequireJS App</h2></section>
-<section data-transition="linear"><h2>How does RequireJS work</h2></section>
-<section data-transition="linear"><h2>Extensible</h2></section>
-<section data-transition="linear"><h2>RequireJS for Lazy loading</h2></section>
-<section data-transition="linear"><h2>RequireJS and Drupal</h2></section>
-<section data-transition="linear"><h2>Drupal needs RequireJS</h2></section>
-<section><section data-transition="linear"><h2>Drupal needs an extensible JS module system that works with</h2></section>
-<section data-transition="linear"><h2>  jQuery</h2></section>
-<section data-transition="linear"><h2>  Backbone</h2></section>
-<section data-transition="linear"><h2>  Underescore</h2></section></section>
-<section data-transition="linear"><h2>Benefits of using RequireJS in Drupal</h2></section>
-<section data-transition="linear"><h2>Take the Requirement burden out of php and put it into JS</h2></section>
-<section data-transition="linear"><h2>Allow Javascript to be more modular</h2></section>
-<section data-transition="linear"><h2>Drupal is a community project, community members should be involved.</h2></section>
-        <section>
-          <h1>questions?</h1>
-          <p></p>
-        </section>
-        <section>
-          <h1>Other Kwall Sessions</h1>
-          <p></p>
-        </section>
+
+          <section data-transition="linear">
+          <h2>What is AMD</h2>
+            <p class="fragment roll-in">A way to let your Javascript manage its own dependancies</p>
+            <p class="fragment roll-in">AMD solves many issues of large web apps written in JS</p>
+          </section>
+          <section data-transition="linear">
+            <section>
+              <h2>What is RequireJS</h2>
+            </section>
+            <section data-transition="linear">
+              <h2>Structure of a Javascript Module</h2>
+              <code><pre>
+define(['jquery'] , function ($) {
+  return function () {};
+});
+              </pre></code>
+            </section>
+            <section data-transition="linear">
+                <h2>Structure of a RequireJS App</h2>
+                <h3>Index file</h3>
+                  <code><pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;script data-main="app" src="lib/require.js"&gt;&lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Hello World&lt;/h1&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+                </pre></code>
+              </section>
+              <section data-transition="linear">
+                <h2>Structure of a non-RequireJS App</h2>
+                <h3>As opposed to a normal index file</h3>
+                  <code><pre>
+&lt;!DOCTYPE html&gt;
+&lt;link rel="stylesheet" href="http://www.kwallcompany.com/sites/default/files/css/css_hWWg4TTe6sPnviAjfte5QPVhBleb83UnCWjfbaBDhfk.css" media="all" /&gt;
+&lt;link rel="stylesheet" href="http://www.kwallcompany.com/sites/default/files/css/css_SJIMTPevqZ2kfsWUv381hqa_kp1GO9ynvz-KULUxlB4.css" media="screen" /&gt;
+&lt;link rel="stylesheet" href="http://www.kwallcompany.com/sites/default/files/css/css_Oyab3UIPCMAm5r7yMK6nscxKiLlHdLKRdvPdj-Q6uv4.css" media="all" /&gt;
+&lt;link rel="stylesheet" href="http://www.kwallcompany.com/sites/default/files/css/css_yqmWwKiY1Et4qzP3SSrelW_TxlNwztUsfFm0shGMc6o.css" media="all" /&gt;
+
+&lt;script src="http://www.kwallcompany.com/sites/all/libraries/superfish/sftouchscreen.js?n7fli2"&gt;&lt;/script&gt;
+&lt;script src="http://www.kwallcompany.com/profiles/kwall/modules/contrib/superfish/superfish.js?n7fli2"&gt;&lt;/script&gt;
+&lt;script src="http://www.kwallcompany.com/sites/all/modules/contrib/twitter_db/js/twitter_db.js?n7fli2"&gt;&lt;/script&gt;
+&lt;script src="http://www.kwallcompany.com/profiles/kwall/modules/contrib/views_slideshow/js/views_slideshow.js?n7fli2"&gt;&lt;/script&gt;
+&lt;script src="http://www.kwallcompany.com/profiles/kwall/modules/contrib/extlink/extlink.js?n7fli2"&gt;&lt;/script&gt;
+&lt;script src="http://www.kwallcompany.com/sites/all/libraries/jquery.isotope/jquery.isotope.min.js?n7fli2"&gt;&lt;/script&gt;
+&lt;script src="http://www.kwallcompany.com/sites/all/modules/contrib/views_isotope/views_isotope.js?n7fli2"&gt;&lt;/script&gt;
+&lt;script src="http://www.kwallcompany.com/profiles/kwall/modules/contrib/google_analytics/googleanalytics.js?n7fli2"&gt;&lt;/script&gt;
+&lt;script&gt;var _gaq = _gaq || [];_gaq.push(["_setAccount", "UA-4908231-1"]);_gaq.push(["_trackPageview"]);(function() {var ga = document.createElement("script");ga.type = "text/javascript";ga.async = true;ga.src = ("https:" == document.location.protocol ? "https://" : "http://") + "stats.g.doubleclick.net/dc.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ga, s);})();&lt;/script&gt;
+&lt;script src="http://www.kwallcompany.com/sites/all/libraries/liquidcarousel/js/jquery.liquidcarousel.min.js?n7fli2"&gt;&lt;/script&gt;
+&lt;script src="http://www.kwallcompany.com/sites/all/modules/contrib/views_slideshow_liquidcarousel/js/liquidcarousel.js?n7fli2"&gt;&lt;/script&gt;
+&lt;script src="http://www.kwallcompany.com/sites/all/modules/contrib/quicktabs/js/quicktabs.js?n7fli2"&gt;&lt;/script&gt;
+&lt;script src="http://www.kwallcompany.com/misc/progress.js?v=7.21"&gt;&lt;/script&gt;
+&lt;script src="http://www.kwallcompany.com/modules/file/file.js?n7fli2"&gt;&lt;/script&gt;
+&lt;script src="http://www.kwallcompany.com/misc/collapse.js?v=7.21"&gt;&lt;/script&gt;
+&lt;script src="http://www.kwallcompany.com/sites/all/modules/contrib/mollom/mollom.js?n7fli2"&gt;&lt;/script&gt;
+&lt;script src="http://www.kwallcompany.com/sites/all/modules/contrib/webform/js/webform.js?n7fli2"&gt;&lt;/script&gt;
+&lt;script&gt;(function($) { $(document).ready(function() { var $container = $('#isotope-container'); $container.isotope('option', { getSortData : {  } }); $container.isotope('updateSortData', $('.isotope-element')); }); })(jQuery);&lt;/script&gt;
+&lt;script src="http://www.kwallcompany.com/sites/all/themes/custom/kwallcompany-theme/js/jquery.formalize.min.js?n7fli2"&gt;&lt;/script&gt;
+&lt;script&gt;
+          Shadowbox.path = "/sites/all/libraries/shadowbox/";
+        &lt;/script&gt;
+&lt;script&gt;jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"kwallcompany_theme","theme_token":"JZDq4bhWzY_ENpP23HhWZjRYzVkwb0ooCHVyFFWZpfg","js":{"0":1,"profiles\/kwall\/modules\/contrib\/jquery_update\/replace\/jquery\/1.5\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/libraries\/shadowbox\/shadowbox.js":1,"sites\/all\/modules\/contrib\/shadowbox\/shadowbox_auto.js":1,"sites\/all\/modules\/contrib\/jquery_plugin\/jquery.cycle.all.min.js":1,"misc\/jquery.ba-bbq.js":1,"profiles\/kwall\/libraries\/jquery.placeholder\/jquery.placeholder.min.js":1,"profiles\/kwall\/modules\/contrib\/jquery_placeholder\/jquery_placeholder.js":1,"profiles\/kwall\/modules\/contrib\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"profiles\/kwall\/modules\/contrib\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/form.js":1,"misc\/ajax.js":1,"sites\/all\/libraries\/jquery\/jquery-1.9.0.min.js":1,"sites\/all\/libraries\/fractionslider\/jquery.fractionslider.js":1,"sites\/all\/modules\/contrib\/jqmulti\/js\/switch.js":1,"sites\/all\/modules\/contrib\/contentanalysis\/contentanalysis.js":1,"sites\/all\/modules\/contrib\/contentoptimizer\/contentoptimizer.js":1,"sites\/all\/libraries\/jpanelmenu\/jquery.jpanelmenu.min.js":1,"sites\/all\/modules\/custom\/kwallcompany_custom\/kwallcompany_custom.js":1,"sites\/all\/modules\/custom\/kwallcompany_custom\/kwallcompany_mobile.js":1,"sites\/all\/libraries\/superfish\/jquery.hoverIntent.minified.js":1,"sites\/all\/libraries\/superfish\/jquery.bgiframe.min.js":1,"sites\/all\/libraries\/superfish\/superfish.js":1,"sites\/all\/libraries\/superfish\/supersubs.js":1,"sites\/all\/libraries\/superfish\/supposition.js":1,"sites\/all\/libraries\/superfish\/sftouchscreen.js":1,"profiles\/kwall\/modules\/contrib\/superfish\/superfish.js":1,"sites\/all\/modules\/contrib\/twitter_db\/js\/twitter_db.js":1,"profiles\/kwall\/modules\/contrib\/views_slideshow\/js\/views_slideshow.js":1,"profiles\/kwall\/modules\/contrib\/extlink\/extlink.js":1,"sites\/all\/libraries\/jquery.isotope\/jquery.isotope.min.js":1,"sites\/all\/modules\/contrib\/views_isotope\/views_isotope.js":1,"profiles\/kwall\/modules\/contrib\/google_analytics\/googleanalytics.js":1,"1":1,"sites\/all\/libraries\/liquidcarousel\/js\/jquery.liquidcarousel.min.js":1,"sites\/all\/modules\/contrib\/views_slideshow_liquidcarousel\/js\/liquidcarousel.js":1,"sites\/all\/modules\/contrib\/quicktabs\/js\/quicktabs.js":1,"misc\/progress.js":1,"modules\/file\/file.js":1,"misc\/collapse.js":1,"sites\/all\/modules\/contrib\/mollom\/mollom.js":1,"sites\/all\/modules\/contrib\/webform\/js\/webform.js":1,"2":1,"sites\/all\/themes\/custom\/kwallcompany-theme\/js\/jquery.formalize.min.js":1,"3":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"sites\/all\/libraries\/shadowbox\/shadowbox.css":1,"0":1,"profiles\/kwall\/modules\/contrib\/date\/date_api\/date.css":1,"profiles\/kwall\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"profiles\/kwall\/modules\/contrib\/date\/date_repeat_field\/date_repeat_field.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/contrib\/flexslider\/assets\/css\/flexslider_img.css":1,"profiles\/kwall\/modules\/contrib\/logintoboggan\/logintoboggan.css":1,"sites\/all\/modules\/contrib\/mollom\/mollom.css":1,"modules\/node\/node.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/contrib\/views_fractionslider\/fractionslider\/css\/fractionslider.css":1,"profiles\/kwall\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/modules\/contrib\/codefilter\/codefilter.css":1,"profiles\/kwall\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/all\/libraries\/superfish\/css\/superfish.css":1,"sites\/all\/libraries\/superfish\/css\/superfish-vertical.css":1,"sites\/all\/libraries\/superfish\/css\/superfish-navbar.css":1,"sites\/all\/modules\/contrib\/twitter_db\/css\/twitter_db.css":1,"profiles\/kwall\/modules\/contrib\/views_slideshow\/views_slideshow.css":1,"profiles\/kwall\/modules\/contrib\/extlink\/extlink.css":1,"sites\/all\/modules\/contrib\/views_isotope\/views_isotope.css":1,"sites\/all\/modules\/contrib\/views_slideshow_liquidcarousel\/css\/liquidcarousel.css":1,"sites\/all\/modules\/contrib\/quicktabs\/css\/quicktabs.css":1,"modules\/file\/file.css":1,"sites\/all\/modules\/contrib\/webform\/css\/webform.css":1,"public:\/\/ctools\/css\/d41d8cd98f00b204e9800998ecf8427e.css":1,"sites\/all\/themes\/custom\/kwallcompany-theme\/system.menus.css":1,"sites\/all\/themes\/custom\/kwallcompany-theme\/css\/normalize.css":1,"sites\/all\/themes\/custom\/kwallcompany-theme\/css\/formalize.css":1,"sites\/all\/themes\/custom\/kwallcompany-theme\/fonts\/stylesheet.css":1,"sites\/all\/themes\/custom\/kwallcompany-theme\/css\/styles.css.less":1,"http:\/\/fonts.googleapis.com\/css?family=Telex:regular\u0026subset=latin":1}},"shadowbox":{"animate":true,"animateFade":true,"animSequence":"wh","auto_enable_all_images":0,"auto_gallery":0,"autoplayMovies":true,"continuous":false,"counterLimit":10,"counterType":"default","displayCounter":true,"displayNav":true,"enableKeys":true,"fadeDuration":0.35,"handleOversize":"resize","handleUnsupported":"link","initialHeight":160,"initialWidth":320,"language":"en","modal":false,"overlayColor":"#000","overlayOpacity":0.8,"resizeDuration":0.55,"showMovieControls":true,"slideshowDelay":0,"viewportPadding":20,"useSizzle":false},"twitter_db":{"jquery_plugin":true,"cycle_enabled":1,"cycle_effect":"fade"},"extlink":{"extTarget":"_blank","extClass":0,"extSubdomains":1,"extExclude":"","extInclude":"","extAlert":0,"extAlertText":"This link will take you to an external web site. We are not responsible for their content.","mailtoClass":0},"superfish":{"1":{"id":"1","sf":{"animation":{"opacity":"show","height":"show"},"speed":"\u0027fast\u0027","autoArrows":false,"dropShadows":false,"disableHI":true},"plugins":{"supposition":false,"bgiframe":false}}},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls|xml|z|zip"},"viewsSlideshow":{"featured_projects-default":{"methods":{"goToSlide":["viewsSlideshowPager","viewsSlideshowSlideCounter","viewsSlideshowCycle"],"nextSlide":["viewsSlideshowPager","viewsSlideshowSlideCounter","viewsSlideshowCycle"],"pause":["viewsSlideshowControls","viewsSlideshowCycle"],"play":["viewsSlideshowControls","viewsSlideshowCycle"],"previousSlide":["viewsSlideshowPager","viewsSlideshowSlideCounter","viewsSlideshowCycle"],"transitionBegin":["viewsSlideshowPager","viewsSlideshowSlideCounter"],"transitionEnd":[]},"paused":0}},"viewsSlideshowLiquidCarousel":{"#views_slideshow_liquidcarousel_main_featured_projects-default":{"duration":"100","height":"47","hidearrows":1,"vss_id":"featured_projects-default"}},"quicktabs":{"qt_footer_locations":{"name":"footer_locations","tabs":[{"bid":"nodeblock_delta_19","hide_title":1},{"bid":"nodeblock_delta_20","hide_title":1},{"bid":"nodeblock_delta_21","hide_title":1}],"superfish":{"1":{"id":"1","sf":{"animation":{"opacity":"show","height":"show"},"speed":"\u0027fast\u0027","autoArrows":false,"dropShadows":false,"disableHI":true},"plugins":{"supposition":false,"bgiframe":false}}}}},"jquery_placeholder":{"edit-mailchimp-lists-mailchimp-kwall-newsletter-mergevars-email":{"selector":"#edit-mailchimp-lists-mailchimp-kwall-newsletter-mergevars-email"}},"file":{"elements":{"#edit-submitted-upload-file-upload-upload":"gif,jpg,png,txt,rtf,pdf,doc,docx,zip"}},"ajax":{"edit-submitted-upload-file-upload-upload-button":{"wrapper":"edit-submitted-upload-file-upload-ajax-wrapper","effect":"fade","progress":{"type":"throbber","message":null},"event":"mousedown","keypress":true,"prevent":"click","url":"\/file\/ajax\/submitted\/upload_file\/upload\/form-PESGc5-ht1HwdK-brNtWKUjORzbzaAgLVqFjCBln7TU","submit":{"_triggering_element_name":"submitted_upload_file_upload_upload_button","_triggering_element_value":"Upload"}}}});&lt;/script&gt;
+      &lt;!--[if lt IE 9]&gt;
+    &lt;script src="/profiles/kwall/themes/contrib/zen/js/html5-respond.js"&gt;&lt;/script&gt;
+    &lt;![endif]--&gt;
+  &lt;/head&gt;
+                </pre></code>
+              </section>
+              <section>
+                <h2>Structure of a RequireJS App</h2>
+                <h3>app.js file</h3>
+                  <code><pre>
+// For any third party dependencies, like jQuery, place them in the lib folder.
+
+// Configure loading modules from the lib directory,
+// except for 'app' ones, which are in a sibling
+// directory.
+requirejs.config({
+    baseUrl: 'lib',
+    paths: {
+        app: '../app'
+    }
+});
+
+// Start loading the main app file. Put all of
+// your application logic in there.
+requirejs(['app/main']);
+                </pre></code>
+              </section>
+              <section>
+                <h2>Structure of a RequireJS App</h2>
+                <h3>main.js file</h3>
+                  <code><pre>
+define(function (require) {
+    // Load any app-specific modules
+    // with a relative require call,
+    // like:
+    var messages = require('./messages');
+
+    // Load library/vendor modules using
+    // full IDs, like:
+    var print = require('print');
+
+    print(messages.getHello());
+});
+                </pre></code>
+              </section>
+              <section>
+                <h2>Structure of a RequireJS App</h2>
+                <h3>messages.js file</h3>
+                  <code><pre>
+define(function () {
+    return {
+        getHello: function () {
+            return 'Hello World';
+        }
+    };
+});
+                </pre></code>
+              </section>
+            </section>
+            <section data-transition="linear"><h2>How does RequireJS work</h2></section>
+            <section data-transition="linear">
+              <h2>Extensible</h2>
+              <p>RequireJS is pluggable and extendable</p>
+              <p>Extensions Include:</p>
+              <ul>
+                <li>textjs</li>
+                <li>domReady</li>
+                <li>cs (coffee script)</li>
+                <li>i18n</li>
+              </ul>
+            </section>
+            <section data-transition="linear">
+              <h2>RequireJS for Lazy loading</h2>
+                <p>Use <code>require()</code> on an event.</p>
+              </section>
+          </section>
+          <section data-transition="linear"><h2>RequireJS and Drupal</h2>
+          <p>Talk about requirejs module and _nod's push for requirejs in Drupal 8.1/9</p>
+          </section>
+          <section data-transition="linear"><h2>Drupal needs RequireJS</h2></section>
+          <section data-transition="linear">
+            <section><h2>Drupal needs an extensible JS module system that works with</h2>
+            <ul>
+              <li>jQuery</li>
+              <li>Backbone</li>
+              <li>Underescore</li>
+            </ul>
+          </section></section>
+            <section data-transition="linear"><h2>Take the dependency burden out of php and put it into JS</h2></section>
+            <section data-transition="linear"><h2>Allow Javascript to be more modular</h2></section>
+            <section data-transition="linear"><h2>Drupal is a community project, community members need to make this happen.</h2></section>
+          <section data-transition="linear">
+            <h1>questions?</h1>
+            <p></p>
+          </section>
+          <section data-transition="linear">
+            <h1>Other Kwall Sessions</h1>
+            <p></p>
+          </section>
       </div>
     </div>
 
